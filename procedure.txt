@@ -1,0 +1,45 @@
+Procedure
+Define Variables
+
+Specify the Hadoop version and download URL.
+Set the Hadoop installation directory and detect the Java home path dynamically.
+Install Prerequisites
+
+Update the package repository.
+Install necessary tools: ssh, pdsh, wget, and tar.
+Download Hadoop
+
+Fetch the Hadoop tarball from the Apache mirror.
+Extract it to the /usr/local directory.
+Rename the extracted folder to /usr/local/hadoop and clean up the tarball.
+Set Environment Variables
+
+Define HADOOP_HOME, PATH, and JAVA_HOME.
+Add these variables to the system-wide profile file for persistence.
+Configure Hadoop Files
+
+hadoop-env.sh: Set the JAVA_HOME variable.
+core-site.xml: Configure the default file system (fs.defaultFS).
+hdfs-site.xml: Define HDFS storage directories and replication factor.
+mapred-site.xml: Set the MapReduce framework name.
+yarn-site.xml: Configure YARN for MapReduce shuffle service.
+Create HDFS Directories
+
+Create directories for Namenode and Datanode storage.
+Assign ownership to the current user.
+Set Up Passwordless SSH
+
+Generate SSH keys without a passphrase.
+Add the public key to the authorized keys file.
+Update the SSH configuration to disable strict host key checking.
+Format the Namenode
+
+Format the HDFS Namenode to prepare it for use.
+Start Hadoop Services
+
+Launch the Hadoop DFS and YARN services.
+Verify Installation
+
+Check active Hadoop services using jps.
+Confirm the Hadoop web UI is accessible at http://localhost:9870.
+

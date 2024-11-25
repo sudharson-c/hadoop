@@ -1,0 +1,27 @@
+Installing hadoop:
+1. open ubuntu
+2. open terminal
+3. cd <downloaded folder path >
+4. chmod 777 install.sh
+5. bash install.sh
+6. Open http://localhost:9870
+
+Steps to Execute:
+0. If WordCount.java not there,
+	touch WordCount.java
+	open the WordCount.java
+	paste the code in WordCount.java
+1. Save the code as WordCount.java.
+    Compile the Code:
+        javac -classpath $(hadoop classpath) -d . WordCount.java
+    Create a JAR:
+        jar cf wordcount.jar WordCount*.class
+2. Input File:
+
+    Place the input text file in HDFS:
+        hdfs dfs -mkdir -p /user/input
+        hdfs dfs -put <local-file-path> /user/input
+3.Run the Program:
+    hadoop jar wordcount.jar WordCount /user/input /user/output
+4.View Output:
+    hdfs dfs -cat /user/output/part-r-00000
